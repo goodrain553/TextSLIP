@@ -1,0 +1,15 @@
+torch>=2.4.0
+torchvision
+transformers
+timm
+webdataset==0.2.86
+pandas
+braceexpand
+numpy
+Pillow
+tqdm
+regex
+ftfy
+tensorboard
+wandb
+submitit
