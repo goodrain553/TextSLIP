@@ -1,4 +1,5 @@
 # TextSLIP
+I will upload the dataset and checkpoint ASAP.
 
 TextSLIP combines the standard CLIP image-text contrastive loss with an ESimCSE text-text contrastive loss. The text branch uses a momentum encoder and a queue of momentum text features.
 
@@ -13,16 +14,35 @@ This repository intentionally does not include downstream evaluation, linear pro
 
 ## Installation
 
+The `requirements.txt` file was exported from the working `unimed-clip` environment and pinned to package versions from that environment.
+
+Create a conda environment:
+
 ```bash
-python -m venv .venv
-source .venv/bin/activate
+conda create -n textslip python=3.10 -y
+conda activate textslip
+```
+
+Install dependencies with pip:
+
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-For CUDA-enabled training, install the PyTorch build that matches your CUDA version before installing the rest of the requirements.
+If your machine needs a specific CUDA build of PyTorch, install PyTorch first with the command from the official PyTorch selector, then run the requirements installation. For example:
+
+```bash
+conda create -n textslip python=3.10 -y
+conda activate textslip
+
+# Example only: choose the CUDA version that matches your machine.
+conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=12.1 -c pytorch -c nvidia -y
+pip install -r requirements.txt
+```
 
 ## Data Format
+
 
 Training uses WebDataset shards. Each sample is expected to include an image field and a text field compatible with `src/training/data.py`.
 
@@ -58,7 +78,6 @@ export TEXTSLIP_BATCH_SIZE=256
 export TEXTSLIP_EPOCHS=40
 export TEXTSLIP_LR=0.0001
 export TEXTSLIP_ESIMCSE_SCALE=0.5
-export TEXTSLIP_MASTER_PORT=29500
 ```
 
 The training script launches:
