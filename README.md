@@ -1,7 +1,5 @@
 # TextSLIP
 
-Standalone training code for TextSLIP-style medical image-text pretraining. This repository was extracted from a UniMed-CLIP workspace and keeps only the training path for the `b16_400m_brain` configuration.
-
 TextSLIP combines the standard CLIP image-text contrastive loss with an ESimCSE text-text contrastive loss. The text branch uses a momentum encoder and a queue of momentum text features.
 
 This repository intentionally does not include downstream evaluation, linear probing, retrieval, or dataset preparation scripts from the source workspace.
