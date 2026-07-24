@@ -45,7 +45,9 @@ conda install pytorch==2.4.1 torchvision==0.19.1 torchaudio==2.4.1 pytorch-cuda=
 pip install -r requirements.txt
 ```
 
-## Data Format
+## Dataset
+
+The training data is derived from [MedTrinity-25M](https://huggingface.co/datasets/UCSC-VLAA/MedTrinity-25M), with MRI-related subdatasets filtered for TextSLIP pretraining.
 
 
 Training uses WebDataset shards. Each sample is expected to include an image field and a text field compatible with `src/training/data.py`.
