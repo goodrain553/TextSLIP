@@ -1,9 +1,13 @@
 # TextSLIP
-I will upload the dataset and checkpoint ASAP.
 
 TextSLIP combines the standard CLIP image-text contrastive loss with an ESimCSE text-text contrastive loss. The text branch uses a momentum encoder and a queue of momentum text features.
 
 This repository intentionally does not include downstream evaluation, linear probing, retrieval, or dataset preparation scripts from the source workspace.
+
+## Checkpoint Link
+
+[Google Drive](https://drive.google.com/file/d/1-SMA-Z2K4qoi0EEjEAR1VnYMPiO3D-Mw/view?usp=drive_link)
+
 
 ## Repository Layout
 
@@ -101,9 +105,6 @@ The main TextSLIP config enables:
 
 Checkpoints save the model, optimizer, scaler, and `loss_state`, including the ESimCSE queue.
 
-## GitHub Upload Notes
-
-Before pushing, make sure no datasets, checkpoints, logs, or private cluster paths are committed. The included `.gitignore` excludes common large artifacts, but review `git status` before publishing.
 
 ## Acknowledgement
 
